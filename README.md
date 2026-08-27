@@ -55,8 +55,8 @@ Follow these steps to install and run the extension locally:
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/EimisPacheco/google-cloud-functions-fastramp.git
-cd google-cloud-functions-fastramp
+git clone https://github.com/fastramp-tech/fastramp-v1.git
+cd fastramp-v1
 ```
 
 **2. Install dependencies**
