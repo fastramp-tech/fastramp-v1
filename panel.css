@@ -1,0 +1,967 @@
+/* FastRamp Panel Styles */
+#fastramp-panel-root * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.fastramp-panel {
+  position: fixed !important;
+  top: 0 !important;
+  right: -450px !important;
+  width: 450px !important;
+  height: 100vh !important;
+  background: white !important;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1) !important;
+  transition: right 0.3s ease-in-out !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.fastramp-panel.open {
+  right: 0 !important;
+}
+
+.fastramp-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out !important;
+  z-index: 2147483646 !important;
+}
+
+.fastramp-overlay.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.fastramp-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  padding: 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.fastramp-header-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.fastramp-logo {
+  width: 40px !important;
+  height: 40px !important;
+  background: white !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 24px !important;
+}
+
+.fastramp-header-text h1 {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  color: white !important;
+}
+
+.fastramp-header-text p {
+  font-size: 14px !important;
+  opacity: 0.9 !important;
+  margin: 2px 0 0 0 !important;
+  color: white !important;
+}
+
+.fastramp-header-actions {
+  display: flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+.fastramp-settings-btn {
+  width: 36px !important;
+  height: 36px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-size: 20px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s !important;
+}
+
+.fastramp-settings-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  transform: rotate(90deg) !important;
+}
+
+.fastramp-close-btn {
+  width: 36px !important;
+  height: 36px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-size: 20px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background 0.2s !important;
+}
+
+.fastramp-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.fastramp-panel-content {
+  flex: 1 !important;
+  overflow-y: auto !important;
+  padding: 20px !important;
+  background: white !important;
+}
+
+.fastramp-main-buttons {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 20px !important;
+  padding: 30px !important;
+  display: flex !important;
+  justify-content: space-around !important;
+  align-items: center !important;
+  margin-bottom: 20px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.fastramp-main-buttons::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 40% !important;
+  background: linear-gradient(to bottom, transparent, rgba(255, 105, 180, 0.3)) !important;
+}
+
+.fastramp-main-btn {
+  background: none !important;
+  border: none !important;
+  color: white !important;
+  cursor: pointer !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+  z-index: 1 !important;
+  position: relative !important;
+  transition: transform 0.2s !important;
+  padding: 10px !important;
+}
+
+.fastramp-main-btn:hover {
+  transform: scale(1.05) !important;
+}
+
+.fastramp-icon {
+  font-size: 32px !important;
+}
+
+.fastramp-label {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: white !important;
+}
+
+.fastramp-arrow {
+  color: white !important;
+  font-size: 24px !important;
+  opacity: 0.6 !important;
+}
+
+.fastramp-voice-section {
+  background: linear-gradient(135deg, #ff6b9d 0%, #feca57 100%) !important;
+  border-radius: 20px !important;
+  padding: 25px !important;
+  margin-bottom: 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  transition: transform 0.2s !important;
+}
+
+.fastramp-voice-section:hover {
+  transform: translateX(-5px) !important;
+}
+
+.fastramp-voice-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+  color: white !important;
+}
+
+.fastramp-voice-icon {
+  font-size: 28px !important;
+}
+
+.fastramp-voice-text h3 {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  color: white !important;
+}
+
+.fastramp-voice-text p {
+  font-size: 13px !important;
+  opacity: 0.9 !important;
+  margin: 2px 0 0 0 !important;
+  color: white !important;
+}
+
+.fastramp-voice-arrow {
+  color: white !important;
+  font-size: 24px !important;
+}
+
+.fastramp-section {
+  margin-bottom: 15px !important;
+}
+
+.fastramp-section-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 12px 0 !important;
+  cursor: pointer !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  transition: background 0.2s !important;
+}
+
+.fastramp-section-header:hover {
+  background: rgba(0, 0, 0, 0.02) !important;
+}
+
+.fastramp-section-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+}
+
+.fastramp-section-icon {
+  font-size: 20px !important;
+}
+
+.fastramp-expand-icon {
+  font-size: 16px !important;
+  color: #666 !important;
+  transition: transform 0.3s !important;
+}
+
+.fastramp-expand-icon.fastramp-expanded {
+  transform: rotate(180deg) !important;
+}
+
+.fastramp-section-content {
+  padding: 15px 0 !important;
+  display: none !important;
+  animation: slideDown 0.3s ease-in-out !important;
+}
+
+.fastramp-section-content.fastramp-expanded {
+  display: block !important;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fastramp-upload-area {
+  border: 2px dashed #ccc !important;
+  border-radius: 12px !important;
+  padding: 30px !important;
+  text-align: center !important;
+  background: #fafafa !important;
+  transition: background 0.2s, border-color 0.2s !important;
+}
+
+.fastramp-upload-area:hover {
+  background: #f0f0f0 !important;
+  border-color: #999 !important;
+}
+
+.fastramp-upload-icon {
+  font-size: 48px !important;
+  margin-bottom: 10px !important;
+}
+
+.fastramp-upload-title {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  margin-bottom: 5px !important;
+}
+
+.fastramp-upload-subtitle {
+  font-size: 13px !important;
+  color: #666 !important;
+  margin-bottom: 15px !important;
+}
+
+.fastramp-choose-files-btn {
+  background: #667eea !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px 30px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+
+.fastramp-choose-files-btn:hover {
+  background: #5a67d8 !important;
+}
+
+.fastramp-file-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 12px 0 !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.fastramp-file-name {
+  font-size: 14px !important;
+  color: #333 !important;
+}
+
+.fastramp-remove-btn {
+  background: #ff6b6b !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 6px 15px !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+
+.fastramp-remove-btn:hover {
+  background: #ff5252 !important;
+}
+
+.fastramp-kb-status {
+  padding: 10px 0 !important;
+  font-size: 14px !important;
+  color: #666 !important;
+}
+
+.fastramp-success-message {
+  background: #d4edda !important;
+  border: 1px solid #c3e6cb !important;
+  border-radius: 8px !important;
+  padding: 15px !important;
+  margin-top: 15px !important;
+  align-items: center !important;
+  gap: 10px !important;
+  animation: slideDown 0.3s ease-in-out !important;
+}
+
+/* Only show as flex when explicitly set to display: flex */
+.fastramp-success-message:not([style*="display: none"]) {
+  display: flex !important;
+}
+
+.fastramp-success-icon {
+  color: #28a745 !important;
+  font-size: 20px !important;
+}
+
+.fastramp-success-text {
+  color: #155724 !important;
+  font-size: 14px !important;
+}
+
+/* Embedding Progress Indicator */
+.fastramp-embedding-progress {
+  background: #e7f3ff !important;
+  border: 1px solid #b3d9ff !important;
+  border-radius: 8px !important;
+  padding: 15px !important;
+  margin-top: 15px !important;
+}
+
+.fastramp-progress-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 10px !important;
+}
+
+.fastramp-progress-icon {
+  font-size: 18px !important;
+}
+
+.fastramp-progress-title {
+  color: #0066cc !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.fastramp-progress-bar {
+  width: 100% !important;
+  height: 8px !important;
+  background: #d9e9ff !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  margin-bottom: 8px !important;
+}
+
+.fastramp-progress-fill {
+  height: 100% !important;
+  background: linear-gradient(90deg, #0066cc, #0052a3) !important;
+  transition: width 0.3s ease !important;
+  border-radius: 4px !important;
+}
+
+.fastramp-progress-text {
+  color: #0066cc !important;
+  font-size: 13px !important;
+  text-align: center !important;
+}
+
+.fastramp-instructions-textarea {
+  width: 100% !important;
+  min-height: 80px !important;
+  padding: 12px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  resize: vertical !important;
+  transition: border-color 0.2s !important;
+  background: white !important;
+  color: #333 !important;
+}
+
+.fastramp-instructions-textarea:focus {
+  outline: none !important;
+  border-color: #667eea !important;
+}
+
+.fastramp-notification {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  background: #d4edda !important;
+  border: 1px solid #c3e6cb !important;
+  border-radius: 8px !important;
+  padding: 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  z-index: 2147483648 !important;
+  animation: slideDown 0.3s ease-in-out !important;
+}
+
+/* API Key Section Styles */
+.fastramp-api-section {
+  background: white !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  margin-bottom: 20px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.fastramp-api-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 15px 20px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.fastramp-api-title {
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.fastramp-api-toggle {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
+  color: white !important;
+  font-size: 18px !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background 0.2s !important;
+}
+
+.fastramp-api-toggle:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.fastramp-api-content {
+  padding: 20px !important;
+  background: #f9f9f9 !important;
+  border-radius: 0 0 12px 12px !important;
+}
+
+.fastramp-api-status {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 15px !important;
+}
+
+.fastramp-status-icon {
+  font-size: 24px !important;
+}
+
+.fastramp-status-text {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.fastramp-api-input-group {
+  display: flex !important;
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.fastramp-api-input {
+  flex: 1 !important;
+  padding: 12px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-family: monospace !important;
+  background: white !important;
+  color: #333 !important;
+  transition: border-color 0.2s !important;
+}
+
+.fastramp-api-input:focus {
+  outline: none !important;
+  border-color: #667eea !important;
+}
+
+.fastramp-api-input:disabled {
+  background: #f5f5f5 !important;
+  cursor: not-allowed !important;
+}
+
+.fastramp-api-save-btn {
+  padding: 12px 24px !important;
+  background: #667eea !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+  white-space: nowrap !important;
+}
+
+.fastramp-api-save-btn:hover {
+  background: #5a67d8 !important;
+}
+
+.fastramp-api-save-btn:disabled {
+  background: #999 !important;
+  cursor: not-allowed !important;
+}
+
+.fastramp-api-help {
+  text-align: right !important;
+}
+
+.fastramp-api-link {
+  color: #667eea !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  transition: color 0.2s !important;
+}
+
+.fastramp-api-link:hover {
+  color: #5a67d8 !important;
+  text-decoration: underline !important;
+}
+
+.fastramp-content-wrapper {
+  transition: opacity 0.3s ease !important;
+}
+
+/* Knowledge Base Chat Styles */
+.fastramp-kb-chat {
+  margin-top: 20px !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: white !important;
+}
+
+.fastramp-chat-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  padding: 12px 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.fastramp-chat-icon {
+  font-size: 18px !important;
+}
+
+.fastramp-chat-title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.fastramp-chat-messages {
+  height: 200px !important;
+  overflow-y: auto !important;
+  padding: 15px !important;
+  background: #f9f9f9 !important;
+}
+
+.fastramp-chat-message {
+  margin-bottom: 10px !important;
+  padding: 10px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  word-wrap: break-word !important;
+}
+
+.fastramp-chat-message.user {
+  background: #667eea !important;
+  color: white !important;
+  margin-left: 20% !important;
+  text-align: right !important;
+}
+
+.fastramp-chat-message.assistant {
+  background: white !important;
+  color: #333 !important;
+  margin-right: 20% !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.fastramp-chat-message.system {
+  background: #fff3cd !important;
+  color: #856404 !important;
+  text-align: center !important;
+  font-style: italic !important;
+}
+
+.fastramp-chat-input-group {
+  display: flex !important;
+  padding: 10px !important;
+  gap: 8px !important;
+  background: white !important;
+  border-top: 1px solid #e0e0e0 !important;
+}
+
+.fastramp-chat-input {
+  flex: 1 !important;
+  padding: 8px 12px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  background: white !important;
+  color: #333 !important;
+}
+
+.fastramp-chat-input:focus {
+  outline: none !important;
+  border-color: #667eea !important;
+}
+
+.fastramp-chat-input:disabled {
+  background: #f5f5f5 !important;
+  cursor: not-allowed !important;
+}
+
+.fastramp-chat-send {
+  padding: 8px 16px !important;
+  background: #667eea !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+
+.fastramp-chat-send:hover:not(:disabled) {
+  background: #5a67d8 !important;
+}
+
+.fastramp-chat-send:disabled {
+  background: #ccc !important;
+  cursor: not-allowed !important;
+}
+
+/* Progress Bar Styles */
+.fastramp-progress-section {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  animation: slideDown 0.3s ease-in-out !important;
+}
+
+.fastramp-progress-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  margin-bottom: 15px !important;
+  text-align: center !important;
+}
+
+.fastramp-progress-stages {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.fastramp-stage {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 12px 15px !important;
+  background: white !important;
+  border-radius: 8px !important;
+  border-left: 4px solid #e0e0e0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.fastramp-stage.active {
+  border-left-color: #feca57 !important;
+  background: #fffef0 !important;
+  box-shadow: 0 2px 6px rgba(254, 202, 87, 0.3) !important;
+}
+
+.fastramp-stage.completed {
+  border-left-color: #28a745 !important;
+  background: #f0f9f4 !important;
+}
+
+.fastramp-stage.error {
+  border-left-color: #dc3545 !important;
+  background: #fcf0f0 !important;
+}
+
+.fastramp-stage-icon {
+  font-size: 20px !important;
+  flex-shrink: 0 !important;
+}
+
+.fastramp-stage.active .fastramp-stage-icon {
+  animation: pulse 1.5s ease-in-out infinite !important;
+}
+
+.fastramp-stage-text {
+  font-size: 14px !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Results Section Styles */
+.fastramp-results-summary {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 15px !important;
+  margin-bottom: 20px !important;
+}
+
+.fastramp-result-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 10px !important;
+  padding: 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+}
+
+.fastramp-result-label {
+  font-size: 12px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500 !important;
+}
+
+.fastramp-result-value {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: white !important;
+}
+
+.fastramp-results-details {
+  margin-top: 20px !important;
+}
+
+.fastramp-results-details-title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 2px solid #e0e0e0 !important;
+}
+
+.fastramp-results-fields-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+}
+
+.fastramp-field-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 10px 12px !important;
+  background: #f9f9f9 !important;
+  border-radius: 6px !important;
+  border: 1px solid #e0e0e0 !important;
+  transition: all 0.2s !important;
+}
+
+.fastramp-field-item:hover {
+  background: #f0f0f0 !important;
+  border-color: #667eea !important;
+}
+
+.fastramp-field-name {
+  font-size: 13px !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+  flex: 1 !important;
+}
+
+.fastramp-field-type {
+  font-size: 11px !important;
+  color: #666 !important;
+  background: #e0e0e0 !important;
+  padding: 3px 8px !important;
+  border-radius: 4px !important;
+  margin: 0 8px !important;
+}
+
+.fastramp-field-status {
+  font-size: 12px !important;
+  color: #28a745 !important;
+  font-weight: 500 !important;
+}
+
+.fastramp-no-fields {
+  text-align: center !important;
+  padding: 30px !important;
+  color: #999 !important;
+  font-size: 14px !important;
+  font-style: italic !important;
+}
+
+/* Primary button style */
+.fastramp-primary-btn {
+  flex: 1 !important;
+  max-width: 100% !important;
+}
+
+.fastramp-primary-btn .fastramp-icon {
+  font-size: 36px !important;
+}
+
+.fastramp-primary-btn .fastramp-label {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+
+.fastramp-primary-btn:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+.fastramp-primary-btn:disabled:hover {
+  transform: none !important;
+}
+
+.fastramp-secondary-btn {
+  flex: 1 !important;
+  max-width: 100% !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.fastramp-secondary-btn .fastramp-icon {
+  font-size: 32px !important;
+}
+
+.fastramp-secondary-btn .fastramp-label {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.fastramp-secondary-btn:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%) !important;
+}

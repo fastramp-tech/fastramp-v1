@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "FastRamp - Chrome AI",
+  "description": "AI-powered form filler using Chrome's built-in Gemini Nano + Google Cloud",
+  "version": "2.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "fastramp.png",
+      "48": "fastramp.png",
+      "128": "fastramp.png"
+    }
+  },
+  "icons": {
+    "16": "fastramp.png",
+    "48": "fastramp.png",
+    "128": "fastramp.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["form-detector.js", "content.js", "panel-injector.js"],
+      "css": ["panel.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "host_permissions": [
+    "https://*.cloudfunctions.net/*",
+    "https://*.googleapis.com/*",
+    "https://www.gstatic.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["panel.html", "panel.css", "fuzzy-button-matcher.js", "hybrid-button-finder.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
